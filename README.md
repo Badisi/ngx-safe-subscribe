@@ -23,6 +23,10 @@ yarn add @badisi/ngx-safe-subscribe
 
 ## Usage
 
+SafeSubscribe is an augmentation method of Observable.  
+
+Calling safeSubscribe instead of subscribe will automatically unsubscribe your observable at component destroy.
+
 ### safeSubscribe(target: any, next: Function, error: Function, complete: Function): Subscription
 
 __Arguments__
@@ -54,7 +58,7 @@ export class AppComponent implements OnInit, OnDestroy {
       });
    }
 
-   // At least a noop ngOnDestroy is required for SafeSubscribe to work.
+   // /!\ At least a noop ngOnDestroy is required for SafeSubscribe to work !
    ngOnDestroy() {}
 }
 ```
