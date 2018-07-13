@@ -12,7 +12,9 @@
 		"url": "https://github.com/Badisi/ngx-safe-subscribe.git"
 	},
 	"scripts": {
-		"build": "ng-packagr -p package.json"
+		"build": "ng-packagr -p package.json",
+		"publish": "npm publish dist --access public",
+		"unpublish": "npm -f unpublish"
 	},
 	"ngPackage": {
 		"$schema": "./node_modules/ng-packagr/ng-package.schema.json",
@@ -29,7 +31,8 @@
 		"zone.js": "^0.8.12"
 	},
 	"devDependencies": {
-		"ng-packagr": "^3.0.3",
+		"ng-packagr": "^2.4.5",
+		"@angular/core": "^5.0.0",
 		"@angular/compiler": "^5.0.0",
 		"@angular/compiler-cli": "^5.0.0",
 		"tsickle": "^0.27.3",
