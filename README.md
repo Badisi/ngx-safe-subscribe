@@ -1,7 +1,11 @@
-### Automatically unsubscribe from RxJS observables in Angular components
+# ngx-safe-subscribe
+
+Automatically unsubscribe from RxJS observables in Angular components.
+
 [![npm](https://img.shields.io/npm/dt/@badisi/ngx-safe-subscribe.svg)]()
 [![Build Status](https://travis-ci.org/Badisi/ngx-safe-subscribe.svg?branch=master)](https://travis-ci.org/Badisi/ngx-safe-subscribe)
 [![npm](https://img.shields.io/npm/l/@badisi/ngx-safe-subscribe.svg)]()
+
 
 ## Installation
 
@@ -18,10 +22,6 @@ yarn add @badisi/ngx-safe-subscribe
 ```
 
 ## Usage
-
-```js
-import '@badisi/ngx-safe-subscribe';
-```
 
 ### safeSubscribe(target: any, next: Function, error: Function, complete: Function): Subscription
 
@@ -45,16 +45,16 @@ import 'rxjs/add/observable/interval';
 import '@badisi/ngx-safe-subscribe';
 
 @Component({
-	selector: 'app-component'
+   selector: 'app-component'
 })
 export class AppComponent implements OnInit, OnDestroy {
-  	ngOnInit() {
-		Observable.interval(1000).safeSubscribe(this, () => {
-	        console.log('This log will stop on component destroy.')
-	    });
-  	}
+   ngOnInit() {
+      Observable.interval(1000).safeSubscribe(this, () => {
+         console.log('This log will stop on component destroy.')
+      });
+   }
 
-	// At least a noop ngOnDestroy is required for SafeSubscribe to work.
-  	ngOnDestroy() {}
+   // At least a noop ngOnDestroy is required for SafeSubscribe to work.
+   ngOnDestroy() {}
 }
 ```
