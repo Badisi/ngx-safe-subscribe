@@ -3,7 +3,6 @@
 Automatically unsubscribe from RxJS observables in Angular components.
 
 [![npm](https://img.shields.io/npm/dt/@badisi/ngx-safe-subscribe.svg)]()
-[![Build Status](https://travis-ci.org/Badisi/ngx-safe-subscribe.svg?branch=master)](https://travis-ci.org/Badisi/ngx-safe-subscribe)
 [![npm](https://img.shields.io/npm/l/@badisi/ngx-safe-subscribe.svg)]()
 
 :zap: *RxJS 6+ version available [here](https://github.com/Badisi/ngx-safe-subscribe/tree/master)*
@@ -14,20 +13,22 @@ Automatically unsubscribe from RxJS observables in Angular components.
 ### NPM
 
 ```js
-npm install --save @badisi/ngx-safe-subscribe
+npm install --save @badisi/ngx-safe-subscribe@1.0.0
 ```
 
 ### Yarn
 
 ```js
-yarn add @badisi/ngx-safe-subscribe
+yarn add @badisi/ngx-safe-subscribe@1.0.0
 ```
 
 ## Usage
 
 SafeSubscribe is an augmentation method of Observable.  
 
-Calling safeSubscribe instead of subscribe will automatically unsubscribe your observable at component destroy.
+Calling **safeSubscribe** instead of **subscribe** will automatically unsubscribe your observable at component destroy.
+
+:warning: make sure to implement at least a noop **ngOnDestroy** on your component, otherwise unsubscribe won't work !
 
 ---------------------------------------
 
