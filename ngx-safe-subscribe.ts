@@ -1,7 +1,6 @@
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable, Subscription } from 'rxjs';
 
-declare module 'rxjs/Observable' {
+declare module 'rxjs/internal/Observable' {
 	interface Observable<T> {
 		safeSubscribe: typeof safeSubscribe;
   	}
@@ -10,7 +9,7 @@ declare module 'rxjs/Observable' {
 export function safeSubscribe<T>(
     target: any,
     next?: (value: T) => void,
-    error?: (error: any) => void,
+    error?: (error: T) => void,
     complete?: () => void
 ): Subscription {
     if( !target._subscriptionFromSafeSubscribe ) {

@@ -46,8 +46,7 @@ __Example__
 
 ```js
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/interval';
+import { Observable, interval } from 'rxjs';
 import '@badisi/ngx-safe-subscribe';
 
 @Component({
@@ -55,7 +54,7 @@ import '@badisi/ngx-safe-subscribe';
 })
 export class AppComponent implements OnInit, OnDestroy {
    ngOnInit() {
-      Observable.interval(1000).safeSubscribe(this, () => {
+      interval(1000).safeSubscribe(this, () => {
          console.log('This log will stop on component destroy.')
       });
    }
