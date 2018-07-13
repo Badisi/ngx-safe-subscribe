@@ -27,6 +27,8 @@ SafeSubscribe is an augmentation method of Observable.
 
 Calling safeSubscribe instead of subscribe will automatically unsubscribe your observable at component destroy.
 
+---------------------------------------
+
 ### safeSubscribe(target: any, next: Function, error: Function, complete: Function): Subscription
 
 __Arguments__
