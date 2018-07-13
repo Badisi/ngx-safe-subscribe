@@ -1,4 +1,4 @@
-# ngx-safe-subscribe
+# ngx-safe-subscribe (RxJS 6+)
 
 Automatically unsubscribe from RxJS observables in Angular components.
 
