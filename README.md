@@ -12,13 +12,13 @@ Automatically unsubscribe from RxJS observables in Angular components.
 
 ### NPM
 
-```
+```sh
 npm install --save @badisi/ngx-safe-subscribe@1.0.0
 ```
 
 ### Yarn
 
-```
+```sh
 yarn add @badisi/ngx-safe-subscribe@1.0.0
 ```
 
@@ -28,7 +28,9 @@ SafeSubscribe is an augmentation method of Observable.
 
 Calling **safeSubscribe** instead of **subscribe** will automatically unsubscribe your observable at component destroy.
 
-:warning: make sure to implement at least a noop **ngOnDestroy** on your component, otherwise unsubscribe won't work !
+---------------------------------------
+
+:warning: Make sure to implement at least a noop **ngOnDestroy** on your component otherwise unsubscribe won't work !
 
 ---------------------------------------
 
@@ -47,7 +49,7 @@ __Return__
 
 __Example__
 
-```js
+```ts
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/interval';
@@ -67,3 +69,28 @@ export class AppComponent implements OnInit, OnDestroy {
    ngOnDestroy() {}
 }
 ```
+
+## Purpose
+
+To quote a great [article](https://netbasal.com/when-to-unsubscribe-in-angular-d61c6b21bad3) from **Netanel Basal** :
+
+> When you subscribe to an observable or event in JavaScript, you usually need to unsubscribe at a certain point to release memory in the system. Otherwise, you will have a memory leak.
+
+When subscribing to an observable in an Angular component, you almost always arrange to unsubscribe when the component is destroyed.
+
+But it can quickly become a mess to deal with all those subscriptions and make sure they were properly released.
+
+The idea behind SafeSubscribe is to abstract all the unsubscribe boilerplate and make it easier to use.
+
+### Rule of thumb
+
+There are a few exceptional observables where you don't need to unsubscribe :
+
+- `Async pipe`
+- `@HostListener`
+- `HTTP requests`
+- `Finite observables (such as Observable.timer)`
+
+However, as stated in the official Angular documentation :
+
+> Feel free to unsubscribe anyway. It is harmless and never a bad practice !
