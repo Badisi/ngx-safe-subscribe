@@ -79,11 +79,11 @@ When subscribing to an observable in an Angular component, you almost always arr
 
 But it can quickly become a mess to deal with all those subscriptions and make sure they were properly released.
 
-The idea behind SafeSubscribe is to abstract all the unsubscribe boilerplate code and make it more easy to use.
+The idea behind SafeSubscribe is to abstract all the unsubscribe boilerplate and make it easier to use.
 
 ### Rule of thumb
 
-There are a few exceptional observables where you don't need to unsubscribe to :
+There are a few exceptional observables where you don't need to unsubscribe :
 
 - `Async pipe`
 - `@HostListener`
