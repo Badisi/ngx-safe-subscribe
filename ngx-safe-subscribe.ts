@@ -2,33 +2,43 @@ import { Observable, Subscription } from 'rxjs';
 
 declare module 'rxjs/internal/Observable' {
 	interface Observable<T> {
-		safeSubscribe: typeof safeSubscribe;
+		safeSubscribe(
+		    target: SafeSubscribable,
+		    next?: (value: T) => void,
+		    error?: (error: any) => void,
+		    complete?: () => void
+		): Subscription;
   	}
 }
 
+export interface SafeSubscribable {
+  	_subscriptionFromSafeSubscribe$?: Subscription;
+	ngOnDestroy(): void;
+}
+
 export function safeSubscribe<T>(
-    target: any,
+    target: SafeSubscribable,
     next?: (value: T) => void,
-    error?: (error: T) => void,
+    error?: (error: any) => void,
     complete?: () => void
 ): Subscription {
-    if( !target._subscriptionFromSafeSubscribe ) {
-		target._subscriptionFromSafeSubscribe = new Subscription();
+    if( !('_subscriptionFromSafeSubscribe$' in target) ) {
+		target._subscriptionFromSafeSubscribe$ = new Subscription();
 
         const originalDestroy = target.ngOnDestroy;
         if( !originalDestroy ) {
-            console.warn(`${target.constructor.name} should implement OnDestroy otherwise Observable<T>.safeSubscribe will have no effect.`);
+            console.warn(`${(target as any).constructor.name} should implement OnDestroy otherwise Observable<T>.safeSubscribe will have no effect.`);
         }
         target.ngOnDestroy = function() {
             if( originalDestroy && (typeof originalDestroy === 'function') ) {
                 originalDestroy.apply(this, arguments);
             }
-            target._subscriptionFromSafeSubscribe.unsubscribe();
+            target._subscriptionFromSafeSubscribe$.unsubscribe();
         };
     }
 
-    const subscribe = this.subscribe(next, error, complete);
-    target._subscriptionFromSafeSubscribe.add(subscribe);
-    return subscribe;
+    const sub = this.subscribe(next, error, complete);
+    target._subscriptionFromSafeSubscribe$.add(sub);
+    return sub;
 }
 Observable.prototype.safeSubscribe = safeSubscribe;
