@@ -1,6 +1,6 @@
 {
 	"name": "@badisi/ngx-safe-subscribe",
-	"version": "2.0.3",
+	"version": "2.0.4",
 	"description": "Easy way to automatically unsubscribe from RxJS observables in Angular components",
 	"homepage": "https://github.com/Badisi/ngx-safe-subscribe",
 	"license": "MIT",
@@ -11,6 +11,14 @@
 		"type": "git",
 		"url": "https://github.com/Badisi/ngx-safe-subscribe.git"
 	},
+	"keywords": [
+		"angular",
+		"rxjs",
+		"observable",
+		"subscribe",
+		"unsubscribe",
+		"ondestroy"
+	],
 	"scripts": {
 		"build": "ng-packagr -p package.json",
 		"publish": "npm publish dist --access public",
