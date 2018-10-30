@@ -4,6 +4,7 @@
 	"description": "Easy way to automatically unsubscribe from RxJS observables in Angular components",
 	"homepage": "https://github.com/Badisi/ngx-safe-subscribe",
 	"license": "MIT",
+	"sideEffects": true,
 	"author": {
 		"name": "Badisi"
 	},
