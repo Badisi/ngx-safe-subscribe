@@ -2,8 +2,12 @@
 
 Automatically unsubscribe from RxJS observables in Angular components.
 
-[![npm](https://img.shields.io/npm/dt/@badisi/ngx-safe-subscribe.svg)]()
-[![npm](https://img.shields.io/npm/l/@badisi/ngx-safe-subscribe.svg)]()
+[![Dependency Status](https://david-dm.org/badisi/ngx-safe-subscribe.svg)](https://david-dm.org/badisi/ngx-safe-subscribe)
+[![devDependency Status](https://david-dm.org/badisi/ngx-safe-subscribe/dev-status.svg)](https://david-dm.org/badisi/ngx-safe-subscribe?type=dev)
+[![peerDependency Status](https://david-dm.org/badisi/ngx-safe-subscribe/peer-status.svg)](https://david-dm.org/badisi/ngx-safe-subscribe?type=peer) 
+
+[![Download](https://img.shields.io/npm/dt/@badisi/ngx-safe-subscribe.svg)]()
+[![License](https://img.shields.io/npm/l/@badisi/ngx-safe-subscribe.svg)](https://github.com/Badisi/ngx-safe-subscribe/blob/master/LICENSE)
 
 :zap: *RxJS 6+ version available [here](https://github.com/Badisi/ngx-safe-subscribe/tree/master)*
 
@@ -30,7 +34,7 @@ Calling **safeSubscribe** instead of **subscribe** will automatically unsubscrib
 
 ---------------------------------------
 
-:warning: Make sure to implement at least a noop **ngOnDestroy** on your component otherwise unsubscribe won't work !
+:warning: At least a noop **ngOnDestroy** is required - but type checking will make sure you never forget about it :wink:
 
 ---------------------------------------
 
