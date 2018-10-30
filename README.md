@@ -17,13 +17,13 @@ Automatically unsubscribe from RxJS observables in Angular components.
 ### NPM
 
 ```sh
-npm install --save @badisi/ngx-safe-subscribe@1.0.2
+npm install --save @badisi/ngx-safe-subscribe@1.0.3
 ```
 
 ### Yarn
 
 ```sh
-yarn add @badisi/ngx-safe-subscribe@1.0.2
+yarn add @badisi/ngx-safe-subscribe@1.0.3
 ```
 
 ## Usage
