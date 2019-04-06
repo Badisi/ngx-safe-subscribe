@@ -24,7 +24,7 @@ export function safeSubscribe<T>(
 
 	        const originalDestroy = target.ngOnDestroy;
 	        if( !originalDestroy ) {
-	            console.warn(`${(target as any).constructor.name} should implement OnDestroy otherwise Observable<T>.safeSubscribe will have no effect.`);
+	            console.warn(`${(target as any).constructor.name} must implement OnDestroy otherwise Observable<T>.safeSubscribe will have no effect.`);
 	        }
 	        target.ngOnDestroy = function() {
 	            if( originalDestroy && (typeof originalDestroy === 'function') ) {

@@ -1,11 +1,11 @@
-# ngx-safe-subscribe (RxJS 6+)
+# ngx-safe-subscribe
 
 Automatically unsubscribe from RxJS observables in Angular components.
 
-[![Dependency Status](https://david-dm.org/badisi/ngx-safe-subscribe.svg)](https://david-dm.org/badisi/ngx-safe-subscribe)
 [![devDependency Status](https://david-dm.org/badisi/ngx-safe-subscribe/dev-status.svg)](https://david-dm.org/badisi/ngx-safe-subscribe?type=dev)
 [![peerDependency Status](https://david-dm.org/badisi/ngx-safe-subscribe/peer-status.svg)](https://david-dm.org/badisi/ngx-safe-subscribe?type=peer) 
 
+[![npm version](https://badge.fury.io/js/%40badisi%2Fngx-safe-subscribe.svg)](https://badge.fury.io/js/%40badisi%2Fngx-safe-subscribe)
 [![Download](https://img.shields.io/npm/dt/@badisi/ngx-safe-subscribe.svg)]()
 [![License](https://img.shields.io/npm/l/@badisi/ngx-safe-subscribe.svg)](https://github.com/Badisi/ngx-safe-subscribe/blob/master/LICENSE)
 
