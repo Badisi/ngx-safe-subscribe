@@ -1,14 +1,14 @@
-import { Observable, Subscription } from "rxjs";
+import { Observable, Subscription } from 'rxjs';
 
 declare module 'rxjs/internal/Observable' {
-	interface Observable<T> {
-        safeSubscribe: typeof safeSubscribe
-  	}
+    interface Observable<T> {
+        safeSubscribe: typeof safeSubscribe;
+    }
 }
 
 export interface SafeSubscribable {
     _subscriptionFromSafeSubscribe$?: Subscription;
- 	ngOnDestroy(): void;
+    ngOnDestroy(): void;
 }
 
 export function safeSubscribe<T>(
@@ -17,24 +17,24 @@ export function safeSubscribe<T>(
     error?: (error: any) => void,
     complete?: () => void
 ): Subscription {
-	const sub = this.subscribe(next, error, complete);
-	if( target ) {
-	    if( !('_subscriptionFromSafeSubscribe$' in target) ) {
-			target._subscriptionFromSafeSubscribe$ = new Subscription();
+    const sub = this.subscribe(next, error, complete);
+    if (target) {
+        if (!('_subscriptionFromSafeSubscribe$' in target)) {
+            target._subscriptionFromSafeSubscribe$ = new Subscription();
 
-	        const originalDestroy = target.ngOnDestroy;
-	        if( !originalDestroy ) {
-	            console.warn(`${(target as any).constructor.name} must implement OnDestroy otherwise Observable<T>.safeSubscribe will have no effect.`);
-	        }
-	        target.ngOnDestroy = function() {
-	            if( originalDestroy && (typeof originalDestroy === 'function') ) {
-	                originalDestroy.apply(this, arguments);
-	            }
-	        	target._subscriptionFromSafeSubscribe$.unsubscribe();
-	        };
-	    }
-	    target._subscriptionFromSafeSubscribe$.add(sub);
-	}
+            const originalDestroy = target.ngOnDestroy;
+            if (!originalDestroy) {
+                console.warn(`${(target as any).constructor.name} must implement OnDestroy otherwise Observable<T>.safeSubscribe will have no effect.`);
+            }
+            target.ngOnDestroy = function () {
+                if (originalDestroy && (typeof originalDestroy === 'function')) {
+                    originalDestroy.apply(this, arguments);
+                }
+                target._subscriptionFromSafeSubscribe$.unsubscribe();
+            };
+        }
+        target._subscriptionFromSafeSubscribe$.add(sub);
+    }
     return sub;
 }
 Observable.prototype.safeSubscribe = safeSubscribe;
