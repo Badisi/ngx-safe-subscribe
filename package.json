@@ -24,7 +24,7 @@
     ],
     "scripts": {
         "build": "ng-packagr -p package.json",
-        "publish": "npm publish dist --access public",
+        "publish": "npm publish ./dist --access public",
         "unpublish": "npm -f unpublish"
     },
     "ngPackage": {
