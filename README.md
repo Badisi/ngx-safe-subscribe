@@ -1,4 +1,4 @@
-# ngx-safe-subscribe
+# @badisi/ngx-safe-subscribe
 
 Automatically unsubscribe from RxJS observables in Angular components.
 
@@ -14,7 +14,7 @@ Automatically unsubscribe from RxJS observables in Angular components.
 ## Installation
 
 ```sh
-npm install --save @badisi/ngx-safe-subscribe
+npm install @badisi/ngx-safe-subscribe --save
 ```
 
 ```sh
