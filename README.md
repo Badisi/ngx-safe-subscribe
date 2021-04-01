@@ -14,11 +14,11 @@ Automatically unsubscribe from RxJS observables in Angular components.
 ## Installation
 
 ```sh
-npm install @badisi/ngx-safe-subscribe --save
+$ npm install @badisi/ngx-safe-subscribe --save
 ```
 
 ```sh
-yarn add @badisi/ngx-safe-subscribe
+$ yarn add @badisi/ngx-safe-subscribe
 ```
 
 ## Usage
@@ -84,10 +84,10 @@ The idea behind SafeSubscribe is to abstract all the unsubscribe boilerplate and
 
 There are a few exceptional observables where you don't need to unsubscribe :
 
-- `Async pipe`
-- `@HostListener`
-- `HTTP requests`
-- `Finite observables (such as Observable.timer)`
+* `Async pipe`
+* `@HostListener`
+* `HTTP requests`
+* `Finite observables (such as Observable.timer)`
 
 However, as stated in the official Angular documentation :
 
