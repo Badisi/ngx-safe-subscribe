@@ -1,6 +1,6 @@
 {
     "name": "@badisi/ngx-safe-subscribe",
-    "version": "2.2.2",
+    "version": "2.2.3",
     "description": "Easy way to automatically unsubscribe from RxJS observables in Angular components",
     "homepage": "https://github.com/Badisi/ngx-safe-subscribe",
     "license": "MIT",
