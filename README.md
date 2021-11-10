@@ -6,7 +6,7 @@ Automatically unsubscribe from RxJS observables in Angular components.
 [![Download](https://img.shields.io/npm/dw/@badisi/ngx-safe-subscribe.svg?color=blue&logo=npm)](https://npmcharts.com/compare/@badisi/ngx-safe-subscribe?minimal=true)
 [![License](https://img.shields.io/npm/l/@badisi/ngx-safe-subscribe.svg?color=ff69b4)](https://github.com/Badisi/ngx-safe-subscribe/blob/master/LICENSE)
 
-[![peerDependency Status](https://david-dm.org/badisi/ngx-safe-subscribe/peer-status.svg)](https://david-dm.org/badisi/ngx-safe-subscribe?type=peer)
+<!--[![peerDependency Status](https://david-dm.org/badisi/ngx-safe-subscribe/peer-status.svg)](https://david-dm.org/badisi/ngx-safe-subscribe?type=peer)-->
 
 :zap: *RxJS 5+ version available [here](https://github.com/Badisi/ngx-safe-subscribe/tree/rxjs-5x)*
 
