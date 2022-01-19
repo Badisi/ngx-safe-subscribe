@@ -23,19 +23,9 @@
         "safesubscribe"
     ],
     "scripts": {
-        "build": "ng-packagr -p package.json",
+        "build": "ng-packagr -p ng-package.json",
         "publish": "npm publish ./dist --access public",
         "unpublish": "npm -f unpublish"
-    },
-    "ngPackage": {
-        "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
-        "lib": {
-            "entryFile": "ngx-safe-subscribe.ts"
-        },
-        "allowedNonPeerDependencies": [
-            "angular",
-            "rxjs"
-        ]
     },
     "peerDependencies": {
         "@angular/core": ">=6.0.0",
