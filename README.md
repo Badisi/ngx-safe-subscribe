@@ -8,7 +8,9 @@ Automatically unsubscribe from RxJS observables in Angular components.
 
 <!--[![peerDependency Status](https://david-dm.org/badisi/ngx-safe-subscribe/peer-status.svg)](https://david-dm.org/badisi/ngx-safe-subscribe?type=peer)-->
 
-:zap: *RxJS 5+ version available [here](https://github.com/Badisi/ngx-safe-subscribe/tree/rxjs-5x)*
+:zap: *Angular <= 13 version available [here](https://github.com/Badisi/ngx-safe-subscribe/releases/tag/2.2.9)*
+
+:zap: *RxJS 5.x version available [here](https://github.com/Badisi/ngx-safe-subscribe/tree/rxjs-5x)*
 
 
 ## Installation
