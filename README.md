@@ -27,48 +27,67 @@ yarn add @badisi/ngx-safe-subscribe
 
 SafeSubscribe is an augmentation method of Observable.
 
-Calling **safeSubscribe** instead of **subscribe** will automatically unsubscribe your observable at component destroy.
+Calling `safeSubscribe` instead of `subscribe` will automatically unsubscribe your observable at component destroy.
 
----------------------------------------
-
-:warning: At least a noop **ngOnDestroy** is required - but type checking will make sure you never forget about it :wink:
-
----------------------------------------
-
-### safeSubscribe(target: any, next: Function, error: Function, complete: Function): Subscription
-
-__Arguments__
-
-* `target` - A reference to the object that is holding the observable.
-* `next` - A handler for each delivered value. Called zero or more times after execution starts.
-* `error` - A handler for an error notification. An error halts execution of the observable instance.
-* `complete` - A handler for the execution-complete notification. Delayed values can continue to be delivered to the next handler after execution is complete.
-
-__Return__
-
-* A `Subscription` object.
-
-__Example__
+#### Example with Angular components
 
 ```ts
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, interval } from 'rxjs';
-import '@badisi/ngx-safe-subscribe';
+import { Component, OnInit } from '@angular/core';
+import { SafeSubscribe } from '@badisi/ngx-safe-subscribe';
+import { interval } from 'rxjs';
 
+@SafeSubscribe()
 @Component({
    selector: 'app-component'
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
    ngOnInit() {
       interval(1000).safeSubscribe(this, () => {
          console.log('This log will stop on component destroy.')
       });
    }
-
-   // /!\ At least a noop ngOnDestroy is required for SafeSubscribe to work !
-   ngOnDestroy() {}
 }
 ```
+
+#### Example with simple class objects
+
+```ts
+import { SafeSubscribe } from '@badisi/ngx-safe-subscribe';
+import { interval } from 'rxjs';
+
+@SafeSubscribe('destroy')
+export class MyObject {
+   constructor() {
+      interval(1000).safeSubscribe(this, () => {
+         console.log('This log will stop on object destroy.')
+      });
+   }
+   destroy() {}
+}
+```
+
+## Api
+
+### @SafeSubscribe(destructorName)
+
+__Arguments__
+
+* `destructorName: string` *(default: "ngOnDestroy")* - The name of the method that will called when the object is supposed to be destroyed.
+
+---
+
+### Observable.safeSubscribe(target, ...arguments): Subscription
+
+__Arguments__
+
+* `target: any` - A reference to the object that is holding the observable.
+* `observerOrNext?: Observer|Function` - Either an observer with methods to be called, or the first of three possible handlers, which is the handler for each value emitted from the subscribed Observable.
+* `error?: Function` - A handler for a terminal event resulting from an error. If no error handler is provided, the error will be thrown asynchronously as unhandled.
+* `complete?: Function` - A handler for a terminal event resulting from successful completion.
+
+__Return__
+
+* A `Subscription` reference to the registered handler.
 
 ## Purpose
 
