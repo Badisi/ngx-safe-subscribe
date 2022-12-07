@@ -1,39 +1,37 @@
 import { Observable, Subscription } from 'rxjs';
 
+const HAS_DECORATOR = Symbol('__safeSubscribeDecorator');
+const SUBSCRIPTION = Symbol('__safeSubscribeSubscription$');
+
 declare module 'rxjs/internal/Observable' {
     interface Observable<T> {
         safeSubscribe: typeof safeSubscribe;
     }
 }
 
-export interface SafeSubscribable {
-    _subscriptionFromSafeSubscribe$?: Subscription;
-    ngOnDestroy(): void;
+export function SafeSubscribe(destructorName ='ngOnDestroy'): ClassDecorator {
+    return (classType: Function) => {
+        const originalDestroy = classType.prototype[destructorName];
+        classType.prototype[destructorName] = function (this: any) {
+            originalDestroy && originalDestroy.call(this);
+            this[SUBSCRIPTION]?.unsubscribe();
+            this[SUBSCRIPTION] = null;
+        }
+        classType.prototype[HAS_DECORATOR] = true;
+    };
 }
 
-export function safeSubscribe<T>(
-    target: SafeSubscribable,
-    next?: (value: T) => void,
-    error?: (error: any) => void,
-    complete?: () => void
-): Subscription {
-    const sub = this.subscribe(next, error, complete);
+export function safeSubscribe<T>(this: Observable<T>, target: any, ...args: any): Subscription {
+    const sub = this.subscribe(...args);
     if (target) {
-        if (!('_subscriptionFromSafeSubscribe$' in target)) {
-            target._subscriptionFromSafeSubscribe$ = new Subscription();
-
-            const originalDestroy = target.ngOnDestroy;
-            if (!originalDestroy) {
-                console.warn(`${(target as any).constructor.name} must implement OnDestroy otherwise Observable<T>.safeSubscribe will have no effect.`);
-            }
-            target.ngOnDestroy = function () {
-                if (originalDestroy && (typeof originalDestroy === 'function')) {
-                    originalDestroy.apply(this, arguments);
-                }
-                target._subscriptionFromSafeSubscribe$.unsubscribe();
-            };
+        const hasDecorator = Object.getPrototypeOf(target)[HAS_DECORATOR];
+        if (!hasDecorator) {
+            throw new Error(`${target.constructor.name} class must be decorated with @SafeSubscribe() otherwise Observable<T>.safeSubscribe() will have no effect.`);
         }
-        target._subscriptionFromSafeSubscribe$.add(sub);
+        if (!target[SUBSCRIPTION]) {
+            target[SUBSCRIPTION] = new Subscription();
+        }
+        target[SUBSCRIPTION].add(sub);
     }
     return sub;
 }
