@@ -2,11 +2,12 @@
 
 Automatically unsubscribe from RxJS observables in Angular components.
 
-[![npm](https://img.shields.io/npm/v/@badisi/ngx-safe-subscribe?color=blue&logo=npm)](https://www.npmjs.com/package/@badisi/ngx-safe-subscribe)
-[![Download](https://img.shields.io/npm/dw/@badisi/ngx-safe-subscribe.svg?color=7986CB&logo=npm)](https://npmcharts.com/compare/@badisi/ngx-safe-subscribe?minimal=true)
-[![License](https://img.shields.io/npm/l/@badisi/ngx-safe-subscribe.svg?color=ff69b4)](https://github.com/Badisi/ngx-safe-subscribe/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@badisi/ngx-safe-subscribe?color=blue&logo=npm)][npm]
+[![npm downloads](https://img.shields.io/npm/dw/@badisi/ngx-safe-subscribe.svg?color=7986CB&logo=npm)][npm-dl]
+[![license](https://img.shields.io/npm/l/@badisi/ngx-safe-subscribe.svg?color=ff69b4)][license]
 
-<!--[![peerDependency Status](https://david-dm.org/badisi/ngx-safe-subscribe/peer-status.svg)](https://david-dm.org/badisi/ngx-safe-subscribe?type=peer)-->
+[![build status](https://github.com/Badisi/ngx-safe-subscribe/actions/workflows/ci_tests.yml/badge.svg)][ci-tests]
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)][pullrequest]
 
 :zap: *Angular <= 13 version available [here](https://github.com/Badisi/ngx-safe-subscribe/releases/tag/2.2.9)*
 
@@ -113,3 +114,26 @@ There are a few exceptional observables where you don't need to unsubscribe :
 However, as stated in the official Angular documentation :
 
 > Feel free to unsubscribe anyway. It is harmless and never a bad practice !
+
+## Contributing
+
+#### > Want to Help ?
+
+Want to file a bug, contribute some code or improve documentation ? Excellent!
+
+But please read up first on the guidelines for [contributing][contributing], and learn about submission process, coding rules and more.
+
+#### > Code of Conduct
+
+Please read and follow the [Code of Conduct][codeofconduct] and help me keep this project open and inclusive.
+
+
+
+
+[npm]: https://www.npmjs.com/package/@badisi/ngx-safe-subscribe
+[npm-dl]: https://npmcharts.com/compare/@badisi/ngx-safe-subscribe?minimal=true
+[ci-tests]: https://github.com/Badisi/ngx-safe-subscribe/actions/workflows/ci_tests.yml
+[pullrequest]: https://github.com/badisi/ngx-safe-subscribe/blob/main/CONTRIBUTING.md#-submitting-a-pull-request-pr
+[license]: https://github.com/Badisi/ngx-safe-subscribe/blob/main/LICENSE
+[contributing]: https://github.com/badisi/latest-version/blob/main/CONTRIBUTING.md
+[codeofconduct]: https://github.com/badisi/latest-version/blob/main/CODE_OF_CONDUCT.md
