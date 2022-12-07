@@ -22,22 +22,24 @@
         "safe-subscribe",
         "safesubscribe"
     ],
+    "workspaces": [
+        "tests"
+    ],
     "scripts": {
-        "ncu": "npx ncu -i --format=group --packageFile '{,projects/**/}package.json'",
-        "build": "ng-packagr -p ng-package.json",
-        "publish": "npm publish ./dist --access public",
-        "unpublish": "npm -f unpublish"
+        "ncu": "npx ncu -i --format=group --packageFile '{,tests/**/}package.json'",
+        "test": "npm run test --prefix ./tests",
+        "build": "ng-packagr -p ng-package.json"
     },
     "peerDependencies": {
-        "@angular/core": ">=14.0.0",
-        "rxjs": ">=6.0.0"
+        "@angular/core": ">= 14.0.0",
+        "rxjs": ">= 6.0.0"
     },
     "devDependencies": {
         "@angular/compiler": "^15.0.2",
         "@angular/compiler-cli": "^15.0.2",
         "@angular/core": "^15.0.2",
-        "rxjs": "^7.6.0",
         "ng-packagr": "^15.0.1",
+        "rxjs": "^7.6.0",
         "tslib": "^2.4.1",
         "typescript": "^4.8.4",
         "zone.js": "^0.12.0"

@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "../out-tsc/spec",
+        "module": "CommonJs",
+        "experimentalDecorators": true,
+        "types": [
+            "jest"
+        ]
+    },
+    "include": [
+        "**/*.spec.ts",
+        "**/*.d.ts"
+    ]
+}

@@ -5,7 +5,11 @@ on:
     types: [created]
 
 jobs:
+  ci_tests:
+    uses: ./.github/workflows/ci_tests.yml
+
   ci_publish:
+    needs: ci_tests
     runs-on: ubuntu-latest
 
     steps:
@@ -31,4 +35,4 @@ jobs:
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm run publish
+        run: npm publish ./dist --access public
