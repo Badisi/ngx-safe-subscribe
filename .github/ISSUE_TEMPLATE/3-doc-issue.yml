@@ -6,8 +6,7 @@ labels: [Documentation, Needs Triage]
 body:
 - type: checkboxes
   attributes:
-    label: Agreement
-    description: Documentation can be submitted with pull requests.
+    label: Documentation can be submitted with pull requests
     options:
     - label: I know that I can edit the docs myself but prefer to file this issue instead
       required: true

@@ -16,7 +16,7 @@ body:
 
 - type: input
   attributes:
-    label: Version
+    label: Library version
     description: Please make sure you have installed the latest version and verified it is still an issue.
     placeholder: latest
   validations:
@@ -49,9 +49,9 @@ body:
         - **npm**: **`npm -v`**: 7.6.3
         - **Node.js**: **`node -v`**: 13.14.0
     value: |
-        - OS Name:
-        - System Model Name:
-        - npm:
-        - Node.js:
+        - **OS Name**:
+        - **System Model Name**:
+        - **npm**:
+        - **Node.js**:
   validations:
     required: false

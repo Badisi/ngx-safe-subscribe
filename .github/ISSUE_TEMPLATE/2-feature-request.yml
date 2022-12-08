@@ -23,4 +23,4 @@ body:
     label: Alternatives considered
     description: Have you considered any alternative solutions or workarounds?
   validations:
-    required: true
+    required: false
