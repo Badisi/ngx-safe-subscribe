@@ -1,7 +1,7 @@
 name: 📚 Docs enhancement
 description: File an enhancement or report an issue in the library's documentation
 title: "[DOCS] <title>"
-labels: [Documentation, Needs Triage]
+labels: [documentation, needs triage]
 
 body:
 - type: checkboxes

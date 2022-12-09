@@ -1,7 +1,7 @@
 name: 🚀 Feature request
 description: Suggest a feature for the library
 title: "[FEATURE] <title>"
-labels: [Feature, Needs Triage]
+labels: [enhancement, needs triage]
 
 body:
 - type: textarea
