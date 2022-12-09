@@ -1,6 +1,6 @@
 # @badisi/ngx-safe-subscribe
 
-Automatically unsubscribe from RxJS observables in Angular components.
+⛑️ Automatically unsubscribe from RxJS observables in Angular components.
 
 [![npm version](https://img.shields.io/npm/v/@badisi/ngx-safe-subscribe?color=blue&logo=npm)][npm]
 [![npm downloads](https://img.shields.io/npm/dw/@badisi/ngx-safe-subscribe.svg?color=7986CB&logo=npm)][npm-dl]
