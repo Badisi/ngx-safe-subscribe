@@ -1,18 +1,39 @@
-# @badisi/ngx-safe-subscribe
+<h1 align="center">
+    @badisi/ngx-safe-subscribe
+</h1>
 
-⛑️ Automatically unsubscribe from RxJS observables in Angular components.
+<p align="center">
+    <i>⛑️ Automatically unsubscribe from RxJS observables in Angular components.</i><br/>
+</p>
 
-[![npm version](https://img.shields.io/npm/v/@badisi/ngx-safe-subscribe?color=blue&logo=npm)][npm]
-[![npm downloads](https://img.shields.io/npm/dw/@badisi/ngx-safe-subscribe.svg?color=7986CB&logo=npm)][npm-dl]
-[![license](https://img.shields.io/npm/l/@badisi/ngx-safe-subscribe.svg?color=ff69b4)][license]
+<p align="center">
+    <a href="https://www.npmjs.com/package/@badisi/ngx-safe-subscribe">
+        <img src="https://img.shields.io/npm/v/@badisi/ngx-safe-subscribe?color=blue&logo=npm" alt="npm version" />
+    </a>
+    <a href="https://npmcharts.com/compare/@badisi/ngx-safe-subscribe?minimal=true">
+        <img src="https://img.shields.io/npm/dw/@badisi/ngx-safe-subscribe.svg?color=7986CB&logo=npm" alt="npm donwloads" />
+    </a>
+    <a href="https://github.com/Badisi/ngx-safe-subscribe/blob/main/LICENSE">
+        <img src="https://img.shields.io/npm/l/@badisi/ngx-safe-subscribe.svg?color=ff69b4" alt="license" />
+    </a>
+</p>
 
-[![build status](https://github.com/Badisi/ngx-safe-subscribe/actions/workflows/ci_tests.yml/badge.svg)][ci-tests]
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)][pullrequest]
+<p align="center">
+    <a href="https://github.com/Badisi/ngx-safe-subscribe/actions/workflows/ci_tests.yml">
+        <img src="https://github.com/Badisi/ngx-safe-subscribe/actions/workflows/ci_tests.yml/badge.svg" alt="build status" />
+    </a>
+    <a href="https://github.com/badisi/ngx-safe-subscribe/blob/main/CONTRIBUTING.md#-submitting-a-pull-request-pr">
+        <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" />
+    </a>
+</p>
+
+<hr/>
 
 :zap: *Angular <= 13 version available [here](https://github.com/Badisi/ngx-safe-subscribe/releases/tag/2.2.9)*
 
 :zap: *RxJS 5.x version available [here](https://github.com/Badisi/ngx-safe-subscribe/tree/rxjs-5x)*
 
+<hr/>
 
 ## Installation
 
@@ -130,10 +151,5 @@ Please read and follow the [Code of Conduct][codeofconduct] and help me keep thi
 
 
 
-[npm]: https://www.npmjs.com/package/@badisi/ngx-safe-subscribe
-[npm-dl]: https://npmcharts.com/compare/@badisi/ngx-safe-subscribe?minimal=true
-[ci-tests]: https://github.com/Badisi/ngx-safe-subscribe/actions/workflows/ci_tests.yml
-[pullrequest]: https://github.com/badisi/ngx-safe-subscribe/blob/main/CONTRIBUTING.md#-submitting-a-pull-request-pr
-[license]: https://github.com/Badisi/ngx-safe-subscribe/blob/main/LICENSE
 [contributing]: https://github.com/badisi/latest-version/blob/main/CONTRIBUTING.md
 [codeofconduct]: https://github.com/badisi/latest-version/blob/main/CODE_OF_CONDUCT.md
