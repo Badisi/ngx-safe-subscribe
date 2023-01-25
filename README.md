@@ -94,7 +94,7 @@ export class MyObject {
 
 __Arguments__
 
-* `destructorName: string` *(default: "ngOnDestroy")* - The name of the method that will called when the object is supposed to be destroyed.
+* `destructorName: string` *(default: "ngOnDestroy")* - The name of the method that will be called when the object is supposed to be destroyed.
 
 ---
 
