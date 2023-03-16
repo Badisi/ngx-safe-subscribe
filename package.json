@@ -26,7 +26,7 @@
         "tests"
     ],
     "scripts": {
-        "ncu": "npx ncu -i --format=group --packageFile '{,tests/**/}package.json'",
+        "ncu": "npx npm-check-updates -i --format=group --packageFile '{,tests/**/}package.json'",
         "test": "npm run test --prefix ./tests",
         "build": "ng-packagr -p ng-package.json"
     },
