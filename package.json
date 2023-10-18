@@ -35,12 +35,12 @@
         "rxjs": ">= 6.0.0"
     },
     "devDependencies": {
-        "@angular/compiler": "^16.2.0",
-        "@angular/compiler-cli": "^16.2.0",
-        "@angular/core": "^16.2.0",
-        "ng-packagr": "^16.2.0",
+        "@angular/compiler": "^16.2.10",
+        "@angular/compiler-cli": "^16.2.10",
+        "@angular/core": "^16.2.10",
+        "ng-packagr": "^16.2.3",
         "rxjs": "^7.8.1",
-        "tslib": "^2.6.1",
+        "tslib": "^2.6.2",
         "typescript": "^5.1.6",
         "zone.js": "^0.13.1"
     }
