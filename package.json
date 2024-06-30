@@ -28,7 +28,9 @@
     "scripts": {
         "ncu": "npx npm-check-updates -i --format=group --packageFile '{,tests/**/}package.json'",
         "test": "npm run test --prefix ./tests",
-        "build": "ng-packagr -p ng-package.json"
+        "test:ci": "npm run test",
+        "build": "ng-packagr -p ng-package.json",
+        "release": "npm publish ./dist --access public"
     },
     "peerDependencies": {
         "@angular/core": ">= 14.0.0",
