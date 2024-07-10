@@ -11,4 +11,5 @@ jobs:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     with:
       test: true
+      build: true
       release: true
