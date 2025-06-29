@@ -4,7 +4,7 @@
         "test": "jest --config jest.config.js"
     },
     "devDependencies": {
-        "@types/jest": "^29.5.14",
-        "jest-preset-angular": "^14.5.5"
+        "@types/jest": "^30.0.0",
+        "jest-preset-angular": "^14.6.0"
     }
 }
