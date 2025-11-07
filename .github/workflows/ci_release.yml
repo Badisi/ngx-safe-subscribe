@@ -4,6 +4,9 @@ on:
   release:
     types: [created]
 
+permissions:
+  id-token: write # Required for NPM Trusted Publishers
+
 jobs:
   ci_release:
     uses: badisi/actions/.github/workflows/action.yml@v4
