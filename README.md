@@ -11,13 +11,13 @@
         <img src="https://img.shields.io/npm/v/@badisi/ngx-safe-subscribe?color=blue&logo=npm" alt="npm version" /></a>
     <a href="https://npmcharts.com/compare/@badisi/ngx-safe-subscribe?minimal=true">
         <img src="https://img.shields.io/npm/dw/@badisi/ngx-safe-subscribe.svg?color=7986CB&logo=npm" alt="npm donwloads" /></a>
-    <a href="https://github.com/Badisi/ngx-safe-subscribe/blob/main/LICENSE">
+    <a href="https://github.com/badisi/ngx-safe-subscribe/blob/main/LICENSE">
         <img src="https://img.shields.io/npm/l/@badisi/ngx-safe-subscribe.svg?color=ff69b4" alt="license" /></a>
 </p>
 
 <p align="center">
-    <a href="https://github.com/Badisi/ngx-safe-subscribe/actions/workflows/ci_tests.yml">
-        <img src="https://github.com/Badisi/ngx-safe-subscribe/actions/workflows/ci_tests.yml/badge.svg" alt="build status" /></a>
+    <a href="https://github.com/badisi/ngx-safe-subscribe/actions/workflows/ci_tests.yml">
+        <img src="https://img.shields.io/github/actions/workflow/status/badisi/ngx-safe-subscribe/ci_tests.yml?logo=github" alt="build status" /></a>
     <a href="https://github.com/badisi/ngx-safe-subscribe/blob/main/CONTRIBUTING.md#-submitting-a-pull-request-pr">
         <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome" /></a>
 </p>
