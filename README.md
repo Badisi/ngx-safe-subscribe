@@ -1,3 +1,6 @@
+> [!CAUTION]
+> **DEPRECATED**: This package is no longer maintained. Modern Angular applications should use native framework features like `takeUntilDestroyed` from `@angular/core/rxjs-interop` or `Angular Signals` for state management.
+
 <h1 align="center">
     @badisi/ngx-safe-subscribe
 </h1>
