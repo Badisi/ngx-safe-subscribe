@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-    <i>⛑️ Automatically unsubscribe from RxJS observables in Angular components.</i><br/>
+    ⛑️ <i>Automatically unsubscribe from RxJS observables in Angular components.</i><br/>
 </p>
 
 <p align="center">
